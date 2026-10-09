@@ -85,6 +85,75 @@ footer .feedback-reviews{padding:20px 0 16px!important}footer .feedback-reviews 
 
 /* Fix booking dropdown stacking over neighboring form controls */
 .event-form .form-grid{isolation:isolate}.event-form .form-grid>label{position:relative;z-index:1}.event-form .form-grid>label:has(.themed-select.is-open){z-index:200}.event-form .themed-select.is-open{z-index:201}.event-form .themed-select-list{z-index:202;max-height:218px;overflow-y:auto;overscroll-behavior:contain}.event-form .themed-option{min-height:40px;padding:9px 12px}@media(max-width:600px){.event-form .themed-select-list{max-height:min(38dvh,240px)}}
+
+/* Mobile/tablet refinements only — desktop (851px+) unchanged */
+@media(max-width:850px){
+html,body{max-width:100%;overflow-x:clip}
+.header{z-index:100}.header nav{z-index:101;max-width:100vw;box-sizing:border-box}
+.section-wrap{width:100%;box-sizing:border-box}
+.intro,.plan-layout,.service-grid,.moments-grid{min-width:0}
+.intro{grid-template-columns:1fr;gap:16px}.intro-copy{padding-top:0}
+.section-heading{align-items:start}.section-heading h2{overflow-wrap:break-word}
+.service-grid{grid-template-columns:1fr 1fr}.service:nth-child(3){grid-column:1/-1;border-left:0;padding-left:0}
+.moments-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.moments-card,.moments-card:first-child,.moments-card:nth-child(4){min-height:300px;grid-column:auto;grid-row:auto}
+.plan-layout{grid-template-columns:1fr;gap:22px}
+.event-form{width:100%;min-width:0;overflow:visible}
+.event-form .form-grid{overflow:visible}
+.event-form .themed-select-list{max-height:min(225px,40dvh)}
+.connect-icons{gap:12px}
+footer .feedback-reviews .reviews-window{max-width:100%;overflow:hidden}
+.footer-top{flex-wrap:wrap}
+}
+@media(max-width:600px){
+html{scroll-padding-top:76px}
+.header{height:76px}.header nav{top:76px;max-height:calc(100dvh - 76px)}
+.hero{min-height:calc(100svh - 76px);height:auto;max-height:none}
+.hero-content{padding-top:72px;padding-bottom:130px}
+.hero h1{font-size:clamp(2.35rem,9.8vw,3.4rem);line-height:1.14;overflow-wrap:anywhere}
+.hero-description{font-size:.96rem;line-height:1.65}
+.hero-foot{gap:10px;align-items:end}.hero-foot>span{max-width:150px}
+.hero-actions .button{width:auto;max-width:100%}
+.occasion-strip{font-size:.86rem;gap:7px 12px}
+.intro{padding-top:39px;padding-bottom:40px}
+.intro h2,.services h2,.moments-heading h2{font-size:clamp(1.85rem,8vw,2.55rem)}
+.section-heading{margin-bottom:16px}
+.service-grid{grid-template-columns:1fr}
+.service:nth-child(3){grid-column:auto}
+.service,.service+.service{border-left:0;padding:18px 0;border-bottom:1px solid var(--line)}
+.service h3{font-size:1.42rem}
+.service ul{margin-top:8px}
+.moments-grid{grid-template-columns:1fr;gap:12px}
+.moments-card,.moments-card:first-child,.moments-card:nth-child(4){width:100%;min-height:0;aspect-ratio:4 / 3.2}
+.moments-overlay{padding:17px}.moments-overlay strong{font-size:clamp(1.35rem,6.2vw,1.8rem)}
+.connect-icons{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 5px}
+.connect-icon{min-width:0;width:100%;font-size:.75rem}.connect-icon-ring{width:57px;height:57px}
+.plan{padding:34px 0!important}.plan-layout{gap:18px}.plan h2{font-size:clamp(2rem,8.5vw,2.7rem)!important}
+.event-form{padding:18px 15px!important;max-width:100%}
+.event-form .form-top{display:block}.event-form .form-top h3{font-size:1.4rem}
+.event-form .form-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+.event-form .form-grid>label,.event-form .form-grid .full{grid-column:auto;min-width:0}
+.event-form input,.event-form textarea,.event-form select,.event-form .themed-select-trigger{width:100%;max-width:100%;box-sizing:border-box;min-height:48px;font-size:16px}
+.event-form .themed-select-list{max-height:min(32dvh,205px);overscroll-behavior:contain}
+.event-form .themed-option{font-size:15px;min-height:42px}
+.event-form .form-submit{width:100%;min-height:48px}
+footer .feedback-reviews{padding:21px 0 15px!important}
+footer .feedback-reviews .reviews-head{padding:0 18px;margin-bottom:12px!important}
+footer .feedback-reviews .reviews-head h2{font-size:clamp(1.35rem,6vw,1.65rem)!important}
+footer .feedback-reviews .reviews-head p:last-child{font-size:.72rem}
+footer .feedback-card{width:205px!important;min-height:130px!important}
+footer .feedback-reviews .reviews-action{padding:0 15px}
+footer .feedback-reviews .reviews-action .button{width:auto;max-width:100%;font-size:.75rem}
+footer .feedback-disclaimer{padding:0 16px;line-height:1.5}
+.footer-top{gap:18px;padding-top:23px!important;padding-bottom:23px!important}
+.footer-top>div{gap:9px 16px}.footer-bottom{gap:8px}
+}
+@media(max-width:360px){
+.hero h1{font-size:2.18rem}.hero-foot a{font-size:.6rem}
+.occasion-strip{font-size:.79rem}
+.connect-icon-ring{width:52px;height:52px}
+.event-form{padding:16px 12px!important}
+}
 </style>
 </head>
 <body>
