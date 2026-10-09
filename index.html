@@ -60,6 +60,21 @@ html{overflow-x:clip}body{overflow-x:clip}img,svg{max-width:100%}main,section,.s
 .actual-reviews{padding:46px 0 52px}.actual-reviews .reviews-head{margin-bottom:20px}.google-reviews-panel{max-width:880px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:0;border:1px solid #e7dac4;background:white}.google-rating{padding:27px 32px;border-right:1px solid #e7dac4}.google-label{font-weight:700;color:#182734;font-size:1rem}.google-score{font-family:var(--serif);font-size:2.65rem;line-height:1.4;color:#182734;white-space:nowrap}.google-stars{font-family:Arial,sans-serif;font-size:1.3rem;letter-spacing:1px;color:#bb9149}.google-rating p,.google-review-links p{color:#677079;font-size:.84rem}.rating-note{font-size:.72rem}.google-review-links{padding:27px 32px;display:flex;align-items:center;align-content:center;gap:13px;flex-wrap:wrap}.google-review-links p{width:100%;margin-bottom:3px}.google-review-links .button{min-height:44px;padding:9px 16px;font-size:.81rem}@media(max-width:650px){.google-reviews-panel{grid-template-columns:1fr}.google-rating{border-right:0;border-bottom:1px solid #e7dac4;text-align:center;padding:20px}.google-review-links{padding:20px;gap:10px}.google-review-links .button{width:100%}.google-score{font-size:2.35rem}}
 
 .feedback-reviews{padding:50px 0 45px;background:#f5f0e7}.feedback-reviews .reviews-head{margin-bottom:26px}.feedback-reviews .reviews-head h2{font-size:clamp(2rem,3vw,2.8rem)}.feedback-reviews .reviews-head p:last-child{margin-top:10px}.feedback-track{display:flex;gap:16px;width:max-content;animation:feedback-glide 37s linear infinite}.feedback-reviews .reviews-window:hover .feedback-track,.feedback-reviews .reviews-window:focus-within .feedback-track{animation-play-state:paused}.feedback-card{flex:none;width:320px;min-height:208px;background:#fff;border:1px solid #e6d9c6;padding:23px 25px;display:flex;flex-direction:column;align-items:start}.feedback-top{width:100%;display:flex;align-items:center;justify-content:space-between}.feedback-symbol{color:#b59156;font-size:1.25rem}.feedback-label{font-size:.62rem;letter-spacing:.13em;color:#967541}.feedback-card h3{font:400 1.42rem/1.25 var(--serif);margin:12px 0 6px;color:#182734}.feedback-card p{font-size:.85rem;color:#667079;line-height:1.55}.feedback-bottom{margin-top:auto;padding-top:12px;color:#987441;font-size:.76rem}.feedback-reviews .reviews-action{margin-top:24px}.feedback-disclaimer{text-align:center;margin:15px 16px 0;font-size:.72rem;color:#727980}.feedback-disclaimer a{text-decoration:underline;text-underline-offset:3px}@keyframes feedback-glide{to{transform:translateX(calc(-50% - 8px))}}@media(max-width:600px){.feedback-reviews{padding:43px 0 40px}.feedback-card{width:270px;min-height:204px;padding:20px}.feedback-card h3{font-size:1.28rem}.feedback-track{animation-duration:33s}}@media(prefers-reduced-motion:reduce){.feedback-track{animation:none}.feedback-reviews .reviews-window{overflow-x:auto;mask-image:none}}
+
+/* Fully themed select menus instead of native Chrome popup */
+.event-form .themed-select{position:relative;width:100%;isolation:isolate}
+.event-form .themed-select>select{position:absolute!important;inset:0!important;width:100%!important;height:46px!important;opacity:0!important;z-index:-1;pointer-events:none;min-height:0!important}
+.event-form .themed-select-trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:46px;padding:10px 13px;border:1px solid #d5dbdb;border-radius:3px;background:#fbfcfc;color:#182734;text-align:left;font:inherit;font-size:.88rem;cursor:pointer}
+.event-form .themed-select-trigger.is-placeholder{color:#667079}
+.event-form .themed-select-trigger:after{content:"";width:8px;height:8px;flex:0 0 8px;border-right:2px solid #a88146;border-bottom:2px solid #a88146;transform:translateY(-2px) rotate(45deg);transition:transform .18s}
+.event-form .themed-select.is-open .themed-select-trigger:after{transform:translateY(2px) rotate(225deg)}
+.event-form .themed-select-trigger:focus-visible,.event-form .themed-select.is-open .themed-select-trigger{outline:0;border-color:#a88146;box-shadow:0 0 0 3px rgba(196,164,102,.18)}
+.event-form .themed-select-list{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:100;max-height:242px;overflow-y:auto;overscroll-behavior:contain;background:#fff;border:1px solid #d5c19b;box-shadow:0 14px 36px rgba(16,30,43,.16);padding:5px;border-radius:4px}
+.event-form .themed-select-list[hidden]{display:none!important}
+.event-form .themed-option{display:block;width:100%;border:0;border-radius:2px;min-height:42px;padding:11px 12px;color:#182734;background:#fff;text-align:left;font-size:.88rem;cursor:pointer}
+.event-form .themed-option:hover,.event-form .themed-option:focus-visible{background:#f4eddf;color:#735323;outline:0}
+.event-form .themed-option[aria-selected="true"]{background:#101e2b;color:#f1d6a1}
+@media(max-width:600px){.event-form .themed-select-trigger{font-size:16px;min-height:47px}.event-form .themed-option{font-size:16px;min-height:46px}.event-form .themed-select-list{max-height:min(45dvh,280px)}}
 </style>
 </head>
 <body>
@@ -102,6 +117,34 @@ html{overflow-x:clip}body{overflow-x:clip}img,svg{max-width:100%}main,section,.s
   <dialog id="privacy-dialog" class="privacy-dialog" aria-labelledby="privacy-title"><button class="dialog-close" aria-label="Close privacy information">×</button><p class="eyebrow">YOUR PRIVACY</p><h2 id="privacy-title">Simple and private.</h2><p>The event brief tool processes your answers in your browser. It does not send or store your event details on a server. Downloading saves a text file to your device. Copying places the brief on your clipboard.</p><p>This website uses no analytics, advertising cookies or account registration. The site includes local photographs and links to external Google Photos albums.</p></dialog>
 <script>
 'use strict';
+
+/* Accessible branded dropdown controls, preserving native select values for event brief creation. */
+(function initThemedSelects(){
+  const widgets=[];
+  document.querySelectorAll('#event-form select').forEach((select,i)=>{
+    const wrap=document.createElement('div'); wrap.className='themed-select';
+    const listId='themed-options-'+i;
+    const trigger=document.createElement('button'); trigger.type='button'; trigger.className='themed-select-trigger';
+    trigger.setAttribute('aria-haspopup','listbox'); trigger.setAttribute('aria-expanded','false');trigger.setAttribute('aria-controls',listId);
+    const menu=document.createElement('div'); menu.className='themed-select-list'; menu.id=listId; menu.setAttribute('role','listbox'); menu.hidden=true;
+    const opts=[...select.options].filter(o=>o.value!=='');
+    const close=(focus=false)=>{menu.hidden=true;wrap.classList.remove('is-open');trigger.setAttribute('aria-expanded','false');if(focus)trigger.focus()};
+    const sync=()=>{const o=select.options[select.selectedIndex];trigger.textContent=o?.textContent||select.options[0].textContent;trigger.classList.toggle('is-placeholder',!select.value);menu.querySelectorAll('[role="option"]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.value===select.value)))};
+    opts.forEach(o=>{const btn=document.createElement('button');btn.type='button';btn.className='themed-option';btn.setAttribute('role','option');btn.dataset.value=o.value;btn.textContent=o.textContent;btn.addEventListener('click',()=>{select.value=o.value;select.dispatchEvent(new Event('change',{bubbles:true}));sync();close(true)});menu.appendChild(btn)});
+    select.parentNode.insertBefore(wrap,select);wrap.appendChild(select);wrap.appendChild(trigger);wrap.appendChild(menu);select.tabIndex=-1;
+    const open=()=>{widgets.forEach(w=>w.close());menu.hidden=false;wrap.classList.add('is-open');trigger.setAttribute('aria-expanded','true')};
+    trigger.addEventListener('click',()=>menu.hidden?open():close());
+    trigger.addEventListener('keydown',e=>{if(['ArrowDown','ArrowUp','Enter',' '].includes(e.key)){e.preventDefault();open();const choices=[...menu.querySelectorAll('button')];const chosen=choices.findIndex(c=>c.dataset.value===select.value);(choices[Math.max(0,chosen)]||choices[0])?.focus()}});
+    menu.addEventListener('keydown',e=>{const options=[...menu.querySelectorAll('button')];const index=options.indexOf(document.activeElement);if(e.key==='Escape'){e.preventDefault();close(true)}else if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();options[(index+(e.key==='ArrowDown'?1:-1)+options.length)%options.length]?.focus()}else if(e.key==='Home'||e.key==='End'){e.preventDefault();options[e.key==='Home'?0:options.length-1]?.focus()}else if(e.key==='Tab'){close()}});
+    select.addEventListener('change',sync);
+    // Native select remains in the form for built-in validation and its value.
+    select.addEventListener('invalid',()=>{open();trigger.focus()});
+    widgets.push({wrap,close});sync();
+  });
+  document.addEventListener('pointerdown',e=>widgets.forEach(w=>{if(!w.wrap.contains(e.target))w.close()}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')widgets.forEach(w=>w.close())});
+})();
+
 const nav = document.querySelector('#nav');
 const toggle = document.querySelector('.menu-toggle');
 toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); nav.classList.toggle('open', open); document.body.classList.toggle('mobile-menu-open', open && window.innerWidth <= 850); });
