@@ -369,5 +369,24 @@ document.querySelectorAll('.image-open').forEach(button => button.addEventListen
 document.querySelector('#privacy-open').addEventListener('click', () => document.querySelector('#privacy-dialog').showModal());
 document.querySelectorAll('dialog').forEach(dialog => { dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close()); dialog.addEventListener('click', event => { if (event.target === dialog) { const bounds = dialog.getBoundingClientRect(); if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close(); } }); });
 
+
+// Anonymous business-action events for Vercel Web Analytics.
+// Track only the interaction type; never send contact details or form responses.
+document.addEventListener('click', function (event) {
+  const link = event.target.closest('a[href]');
+  if (!link || typeof window.va !== 'function') return;
+  const href = link.getAttribute('href') || '';
+  let action = null;
+  if (href.startsWith('https://wa.me/')) action = 'whatsapp_click';
+  else if (href.startsWith('tel:')) action = 'phone_click';
+  else if (href.startsWith('mailto:')) action = 'email_click';
+  else if (href === '#plan') action = 'plan_event_click';
+  if (action) window.va('event', { name: action });
+});
+document.querySelector('#event-form')?.addEventListener('submit', function () {
+  if (typeof window.va === 'function' && this.checkValidity()) {
+    window.va('event', { name: 'event_brief_submit' });
+  }
+});
 </script>
 </body></html>
