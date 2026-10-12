@@ -206,9 +206,9 @@ footer .footer-bottom{padding:11px 0!important;gap:6px!important}
 .services .service-grid{border-top:0;gap:18px;align-items:stretch}
 .services .service,.services .service+.service{position:relative;display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;min-width:0;padding:0 24px 24px!important;border:1px solid #e7dfd2!important;border-radius:3px;background:#fffdf9;box-shadow:0 8px 26px rgba(16,30,43,.045);transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
 .services .service::before{content:"";display:block;align-self:stretch;height:142px;margin:0 -24px 19px;background-size:cover;background-position:center;filter:saturate(.87);transition:transform .65s ease,filter .45s ease}
-.services .service:nth-child(1)::before{background-image:linear-gradient(0deg,rgba(16,30,43,.18),rgba(16,30,43,.04)),url('assets/flower-event-cover.svg')}
+.services .service:nth-child(1)::before{background-image:linear-gradient(0deg,rgba(16,30,43,.18),rgba(16,30,43,.04)),url('https://images.unsplash.com/photo-1772127822562-a898d9f5733c?auto=format&fit=crop&w=1600&q=85')}
 .services .service:nth-child(2)::before{background-image:linear-gradient(0deg,rgba(16,30,43,.22),rgba(16,30,43,.02)),url('assets/event-2.jpg')}
-.services .service:nth-child(3)::before{background-image:linear-gradient(0deg,rgba(16,30,43,.2),rgba(16,30,43,.02)),url('assets/balloon-event-cover.svg')}
+.services .service:nth-child(3)::before{background-image:linear-gradient(0deg,rgba(16,30,43,.2),rgba(16,30,43,.02)),url('https://images.unsplash.com/photo-1774290687229-a725965554c6?auto=format&fit=crop&w=1600&q=85')}
 .services .service-number{display:inline-flex;align-items:center;gap:10px;color:#947747;margin-bottom:11px;font-size:.72rem;letter-spacing:.15em}
 .services .service-number::after{content:"";display:inline-block;width:30px;height:1px;background:#c9a870}
 .services .service h3{font-size:clamp(1.45rem,2vw,1.85rem);line-height:1.19;margin-bottom:13px;letter-spacing:-.02em}
@@ -241,6 +241,13 @@ footer .footer-bottom{padding:11px 0!important;gap:6px!important}
 .services .service ul{font-size:.83rem}
 }
 @media(prefers-reduced-motion:reduce){.services .service,.services .service::before,.services .service .underlined::after{transition:none!important}}
+
+/* Upgrade service covers with generous high-resolution imagery */
+.services .service::before{height:238px!important;background-position:center 48%;margin-bottom:21px!important}
+.services .service:nth-child(1)::before{background-position:center 45%}
+.services .service:nth-child(3)::before{background-position:center 51%}
+@media(max-width:850px){.services .service::before{height:200px!important}}
+@media(max-width:600px){.services .service::before{height:215px!important}}
 </style>
 </head>
 <body>
