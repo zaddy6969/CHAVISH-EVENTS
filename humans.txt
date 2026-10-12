@@ -1,0 +1,9 @@
+/* TEAM */
+Business: CHAVISH EVENTS
+Location: Bengaluru, Karnataka, India
+Contact: Chavishevents@gmail.com
+Website: https://chacishevents.com/
+
+/* SITE */
+Language: English
+Hosting: Vercel
